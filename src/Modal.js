@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 import Button from "./Button";
+import DogImage from "./DogImage";
 
 const Modal = ({ chosenBreed }) => {
   const [breedUrl, setBreedUrl] = useState("");
@@ -19,12 +21,16 @@ const Modal = ({ chosenBreed }) => {
 
   return (
     <>
-      <img src={breedUrl} alt={chosenBreed} />
-      <Button breed={chosenBreed} handleClick={() => fetchData()}>
+      <DogImage src={breedUrl} alt={chosenBreed} />
+      <Button handleClick={() => fetchData()}>
         More pics of {chosenBreed}
       </Button>
     </>
   );
+};
+
+Modal.propTypes = {
+  chosenBreed: PropTypes.string.isRequired
 };
 
 export default Modal;

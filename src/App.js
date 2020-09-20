@@ -32,11 +32,7 @@ const App = () => {
   getBreeds();
 
   let buttonList = breedList.map(breed => (
-    <Button
-      breed={breed}
-      setChosenBreed={setChosenBreed}
-      handleClick={() => setChosenBreed(breed)}
-    >
+    <Button breed={breed} handleClick={() => setChosenBreed(breed)}>
       {breed}
     </Button>
   ));
