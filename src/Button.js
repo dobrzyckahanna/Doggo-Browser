@@ -1,7 +1,7 @@
 import React from "react";
 
-function Button({ breed, setChosenBreed }) {
-  return <button onClick={() => setChosenBreed(breed)}>{breed}</button>;
-}
+const Button = ({ handleClick, children }) => {
+  return <button onClick={handleClick}>{children}</button>;
+};
 
 export default Button;

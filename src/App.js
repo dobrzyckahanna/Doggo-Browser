@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "./Button";
 import Modal from "./Modal";
 
-function App() {
+const App = () => {
   const [breeds, setBreeds] = useState({});
   const [chosenBreed, setChosenBreed] = useState("");
 
@@ -32,7 +32,13 @@ function App() {
   getBreeds();
 
   let buttonList = breedList.map(breed => (
-    <Button breed={breed} setChosenBreed={setChosenBreed}></Button>
+    <Button
+      breed={breed}
+      setChosenBreed={setChosenBreed}
+      handleClick={() => setChosenBreed(breed)}
+    >
+      {breed}
+    </Button>
   ));
   return (
     <>
@@ -40,6 +46,6 @@ function App() {
       <>{chosenBreed ? <Modal chosenBreed={chosenBreed} /> : null}</>
     </>
   );
-}
+};
 
 export default App;
