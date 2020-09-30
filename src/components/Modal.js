@@ -88,10 +88,7 @@ const Modal = ({ chosenBreed, hideModal, showModal }) => {
     setBreedUrl(result.data.message);
   };
 
-  useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useEffect(fetchData, []);
 
   return (
     <ModalWrapper showModal={showModal}>
