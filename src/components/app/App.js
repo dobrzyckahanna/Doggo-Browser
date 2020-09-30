@@ -46,7 +46,7 @@ const App = () => {
   let breedList = [];
   function getBreeds() {
     for (const [key, value] of Object.entries(breeds)) {
-      if (value.length === 0) {
+      if (!value.length) {
         breedList.push(key);
       } else {
         value.forEach(v => breedList.push(`${key} ${v}`));
