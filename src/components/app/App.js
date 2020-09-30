@@ -66,8 +66,8 @@ const App = () => {
     setChosenBreed("");
   };
 
-  let buttonList = breedList.map(breed => (
-    <ButtonWrapper>
+  let buttonList = breedList.map((breed, index) => (
+    <ButtonWrapper key={index}>
       <Button breed={breed} handleClick={() => handleModal(breed)}>
         {breed}
       </Button>
